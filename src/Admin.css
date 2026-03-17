@@ -1,0 +1,154 @@
+.admin-wrap{
+  display: flex;
+  min-height: 100vh;
+  background: #f5f7fb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------------- Left panel ---------------- */
+
+.left{
+  width: 320px;
+  background: #ffffff;
+  padding: 15px;
+  border-right: 1px solid #e5e5e5;
+  box-sizing: border-box;
+}
+
+.left select{
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-bottom: 12px;
+}
+
+/* Institution list */
+
+.left ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.left li{
+  padding: 10px 8px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 14px;
+}
+
+.left li:hover{
+  background: #f0f4ff;
+}
+
+/* Empty text */
+
+.empty-text{
+  margin-top: 10px;
+  font-size: 13px;
+  color: #777;
+  text-align: center;
+}
+
+
+/* ---------------- Right panel ---------------- */
+
+.right{
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.details{
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 650px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.details h3{
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #333;
+}
+
+.details p{
+  margin: 6px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+/* ---------------- Buttons ---------------- */
+
+.btns{
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+}
+
+.ok{
+  padding: 8px 18px;
+  border: none;
+  background: #2ecc71;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.no{
+  padding: 8px 18px;
+  border: none;
+  background: #e74c3c;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.ok:hover{
+  background: #27ae60;
+}
+
+.no:hover{
+  background: #c0392b;
+}
+
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 768px){
+
+  .admin-wrap{
+    flex-direction: column;
+  }
+
+  .left{
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .right{
+    padding: 15px;
+  }
+
+  .details{
+    max-width: 100%;
+  }
+
+  .btns{
+    flex-direction: column;
+  }
+
+  .ok,
+  .no{
+    width: 100%;
+  }
+
+}

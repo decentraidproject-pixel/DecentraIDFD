@@ -1,0 +1,115 @@
+/* VerifierDashboard.css */
+
+.verifier-dashboard {
+  padding: 30px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+}
+
+.verifier-dashboard h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.verifier-dashboard h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Grid for posts */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Post card */
+.post-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.post-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.post-card p {
+  font-size: 1rem;
+  color: #555;
+  margin: 8px 0;
+}
+
+/* Buttons */
+.post-card .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.post-card .buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #fff;
+}
+
+/* Approve Button */
+.post-card .buttons button:first-child {
+  background-color: #4caf50;
+}
+
+.post-card .buttons button:first-child:hover {
+  background-color: #45a049;
+}
+
+/* Reject Button */
+.post-card .buttons button:last-child {
+  background-color: #f44336;
+}
+
+.post-card .buttons button:last-child:hover {
+  background-color: #e53935;
+}
+
+/* Approved / Rejected background */
+.post-card.approved {
+  background-color: #e0f7e9; /* light green */
+  border-left: 5px solid #4caf50;
+}
+
+.post-card.rejected {
+  background-color: #fde0e0; /* light red */
+  border-left: 5px solid #f44336;
+}
+
+/* User score */
+.post-card p:nth-child(4) {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
