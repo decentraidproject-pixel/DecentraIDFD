@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// Animated Trust Score Number
+
 function TrustScore({ score }) {
   const [displayScore, setDisplayScore] = useState(0);
 
   useEffect(() => {
     let start = 0;
     const end = score;
-    const duration = 1500; // animation duration in ms
-    const increment = end / (duration / 15); // update every 15ms
+    const duration = 1500; 
+    const increment = end / (duration / 15); 
 
     const counter = setInterval(() => {
       start += increment;
@@ -41,7 +41,7 @@ function TrustScore({ score }) {
       </span>
       <p style={{ fontSize: "20px", color: "#555", marginTop: "10px" }}>Trust Score</p>
 
-      {/* Optional keyframes for subtle pulsing */}
+      
       <style>{`
         @keyframes pulse {
           0% { transform: scale(1); }
@@ -73,7 +73,7 @@ function UserDashboard() {
 
   const fetchInstitutions = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/institutions/approved");
+      const res = await axios.get("https://decentraid-4-4y2v.onrender.com/api/institutions/approved");
       setInstitutions(res.data);
     } catch (err) {
       console.error(err);
@@ -82,7 +82,7 @@ function UserDashboard() {
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/posts/user/${userId}`);
+      const res = await axios.get(`https://decentraid-4-4y2v.onrender.com/api/posts/user/${userId}`);
       const safePosts = res.data.map(post => ({
         ...post,
         verifiers: post.verifiers || [],
@@ -113,7 +113,7 @@ function UserDashboard() {
       return;
     }
     try {
-      await axios.post("http://localhost:8000/api/posts/create", {
+      await axios.post("https://decentraid-4-4y2v.onrender.com/api/posts/create", {
         userId,
         title,
         description,
@@ -139,7 +139,7 @@ function UserDashboard() {
       <p><b>Name:</b> {name}</p>
       <p><b>Email:</b> {email}</p>
 
-      {/* Fancy Animated Trust Score Number */}
+      
       <TrustScore score={score} />
 
       <br />
@@ -160,7 +160,7 @@ function UserDashboard() {
         </div>
       )}
 
-      {/* Filter Buttons */}
+      
       <div style={{ marginTop: "30px", marginBottom: "20px" }}>
         <button onClick={() => setFilter("all")}>All ({posts.length})</button>
         <button onClick={() => setFilter("pending")}>Pending ({countByStatus("pending")})</button>
@@ -168,7 +168,7 @@ function UserDashboard() {
         <button onClick={() => setFilter("rejected")}>Rejected ({countByStatus("rejected")})</button>
       </div>
 
-      {/* Posts */}
+      
       <div>
         {filteredPosts.length === 0 && <p>No posts to show.</p>}
         {filteredPosts.map(post => (

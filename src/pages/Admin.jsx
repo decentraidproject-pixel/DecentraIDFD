@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 function Admin() {
   const [type, setType] = useState("");
   const [list, setList] = useState([]);
-  const [selected, setSelected] = useState(null); // selected institution details
-  const [activePanel, setActivePanel] = useState(null); // "basic" or "full"
+  const [selected, setSelected] = useState(null); 
+  const [activePanel, setActivePanel] = useState(null); 
   const navigate = useNavigate();
 
-  // Redirect if adminToken not found
+
   useEffect(() => {
     const token = localStorage.getItem("adminToken");
     if (!token) {
@@ -18,7 +18,7 @@ function Admin() {
     }
   }, [navigate]);
 
-  // Fetch list by type
+  
   const fetchList = async (t) => {
     if (!t) {
       setList([]);
@@ -29,8 +29,8 @@ function Admin() {
     try {
       const endpoint =
         activePanel === "basic"
-          ? `http://localhost:8000/api/institution/admin/type/${t}`
-          : `http://localhost:8000/api/institution/admin/fulltype/${t}`;
+          ? `https://decentraid-4-4y2v.onrender.com/api/institution/admin/type/${t}`
+          : `https://decentraid-4-4y2v.onrender.com/api/institution/admin/fulltype/${t}`;
 
       const res = await axios.get(endpoint, {
         headers: {
@@ -45,19 +45,19 @@ function Admin() {
     }
   };
 
-  // When type changes, fetch data for the active panel
+ 
   useEffect(() => {
     if (type && activePanel) {
       fetchList(type);
     }
   }, [type, activePanel]);
 
-  // Load full details of selected institution (only needed for full panel)
+ 
   const loadDetails = async (id) => {
     if (!id) return;
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/institution/admin/details/${id}`,
+        `https://decentraid-4-4y2v.onrender.com/api/institution/admin/details/${id}`,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("adminToken"),
@@ -71,12 +71,12 @@ function Admin() {
     }
   };
 
-  // Approve selected institution
+  
   const approve = async () => {
     if (!selected) return;
     try {
       await axios.post(
-        `http://localhost:8000/api/institution/admin/approve/${selected._id}`,
+        `https://decentraid-4-4y2v.onrender.com/api/institution/admin/approve/${selected._id}`,
         {},
         {
           headers: {
@@ -93,12 +93,12 @@ function Admin() {
     }
   };
 
-  // Reject selected institution
+  
   const reject = async () => {
     if (!selected) return;
     try {
       await axios.post(
-        `http://localhost:8000/api/institution/admin/reject/${selected._id}`,
+        `https://decentraid-4-4y2v.onrender.com/api/institution/admin/reject/${selected._id}`,
         {},
         {
           headers: {
@@ -115,7 +115,7 @@ function Admin() {
     }
   };
 
-  // Reset panel and data
+  
   const handlePanelClick = (panel) => {
     setActivePanel(panel);
     setType("");
@@ -136,7 +136,7 @@ function Admin() {
         </div>
       ) : (
         <div className="left-right-panel">
-          {/* Left panel */}
+          
           <div className="left">
             <select
               value={type}
@@ -179,7 +179,7 @@ function Admin() {
             </ul>
           </div>
 
-          {/* Right panel */}
+          
           <div className="right">
             {selected && (
               <div className="details-right">

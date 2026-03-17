@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../Register.css"; // your CSS file
+import "../Register.css"; 
 
 function Register() {
   const navigate = useNavigate();
@@ -60,11 +60,11 @@ function Register() {
     }
 
     try {
-      // Remove the declaration before sending to backend
+      
       const payload = { ...formData };
       delete payload.declaration;
 
-      await axios.post("http://localhost:8000/api/institution/register", payload);
+      await axios.post("https://decentraid-4-4y2v.onrender.com/api/institution/register", payload);
 
       alert("Registration successful!");
       navigate("verifier-Portal/VerifierLogin");
@@ -79,7 +79,7 @@ function Register() {
       <h2>Institution Registration</h2>
       <form className="reg-form" onSubmit={handleSubmit}>
 
-        {/* Basic Organization Details */}
+        
         <section>
           <h3>Basic Organization Details</h3>
           <input
@@ -117,7 +117,7 @@ function Register() {
           />
         </section>
 
-        {/* Contact Information */}
+        
         <section>
           <h3>Contact Information</h3>
           <input
@@ -150,7 +150,7 @@ function Register() {
           />
         </section>
 
-        {/* Authorized Representative */}
+        
         <section>
           <h3>Authorized Representative</h3>
           <input
@@ -178,7 +178,7 @@ function Register() {
           />
         </section>
 
-        {/* Operational Info */}
+      
         <section>
           <h3>Operational Information</h3>
           <input
@@ -208,7 +208,7 @@ function Register() {
           />
         </section>
 
-        {/* Legal & Compliance */}
+       
         <section>
           <h3>Legal & Compliance</h3>
           <input
@@ -233,7 +233,7 @@ function Register() {
           />
         </section>
 
-        {/* Password */}
+        
         <section>
           <h3>Create Account Password</h3>
           <input
@@ -252,7 +252,7 @@ function Register() {
           />
         </section>
 
-        {/* Declaration */}
+       
         <div className="declaration">
           <label>
             <input

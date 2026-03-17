@@ -19,15 +19,15 @@ function VerifierDashboard() {
     }
   }, []);
 
-  // Fetch posts assigned to this verifier
+  
   const fetchPosts = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:8000/api/posts/verifier", {
+      const res = await axios.get("https://decentraid-4-4y2v.onrender.com/api/posts/verifier", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      // Ensure approvedBy and rejectedBy arrays exist
+      
       const safePosts = res.data.map((post) => ({
         ...post,
         approvedBy: post.approvedBy || [],
@@ -41,17 +41,17 @@ function VerifierDashboard() {
     }
   };
 
-  // Approve or reject a post
+  
   const handleDecision = async (postId, decision) => {
     const token = localStorage.getItem("token");
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/posts/verify/${postId}`,
+        `https://decentraid-4-4y2v.onrender.com/api/posts/verify/${postId}`,
         { decision },
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
-      // Update local state immediately
+      
       const updatedPost = res.data.post;
       setPosts((prev) =>
         prev.map((p) => (p._id === postId ? updatedPost : p))
@@ -105,7 +105,7 @@ function VerifierDashboard() {
               </button>
             </div>
 
-            {/* Below each post show who approved/rejected */}
+            
             <p>
               <b>Approved by:</b>{" "}
               {post.approvedBy.length > 0 ? post.approvedBy.join(", ") : "None"}

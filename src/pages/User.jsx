@@ -16,7 +16,7 @@ const User = () => {
 
 const fetchApproved = async () => {
   try {
-    const res = await axios.get("http://localhost:8000/api/user/approved"); // must match backend
+    const res = await axios.get("https://decentraid-4-4y2v.onrender.com/api/user/approved"); // must match backend
     setApprovedInstitutions(res.data);
   } catch (err) {
     console.error("Error fetching approved institutions:", err.message);
@@ -28,7 +28,7 @@ const fetchApproved = async () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8000/api/user/register", {
+      const res = await axios.post("https://decentraid-4-4y2v.onrender.com/api/user/register", {
         fullName,
         email,
         contactNumber,

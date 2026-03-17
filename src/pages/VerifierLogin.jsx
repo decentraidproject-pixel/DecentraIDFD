@@ -24,7 +24,7 @@ function VerifierLogin() {
     try {
       // Call the verifier login endpoint
       const res = await axios.post(
-        "http://localhost:8000/api/institution/verifierlogin",
+        "https://decentraid-4-4y2v.onrender.com/api/institution/verifierlogin",
         formData
       );
 

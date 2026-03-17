@@ -5,10 +5,10 @@ function UserLookup() {
   const [email, setEmail] = useState("");
   const [posts, setPosts] = useState([]);
   const [score, setScore] = useState(0);
-  const [displayScore, setDisplayScore] = useState(0); // animated display
+  const [displayScore, setDisplayScore] = useState(0); 
   const [userName, setUserName] = useState("");
 
-  // Animate score number
+  
   useEffect(() => {
     let start = 0;
     const end = score;
@@ -30,9 +30,9 @@ function UserLookup() {
   const handleSearch = async () => {
     if (!email) return alert("Enter email!");
     try {
-      const res = await axios.get(`http://localhost:8000/api/posts/userByEmail/${email}`);
+      const res = await axios.get(`https://decentraid-4-4y2v.onrender.com/api/posts/userByEmail/${email}`);
       setPosts(res.data.posts);
-      setScore(res.data.totalScore); // triggers animation
+      setScore(res.data.totalScore); 
       setUserName(res.data.userName);
     } catch (err) {
       console.error(err);
@@ -66,12 +66,12 @@ function UserLookup() {
         <>
           <h3>{userName} ({email})</h3>
 
-          {/* Animated Score */}
+          
           <h1 style={{ fontSize: "48px", fontWeight: "bold", color: "#4CAF50", margin: "10px 0" }}>
             {displayScore}
           </h1>
 
-          {/* Posts */}
+          
           <div style={{ marginTop: "20px" }}>
             {posts.length === 0 && <p>No approved or rejected posts.</p>}
 

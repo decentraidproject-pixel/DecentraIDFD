@@ -23,7 +23,7 @@ function UserRegister() {
     try {
 
       await axios.post(
-        "http://localhost:8000/api/users/register",
+        "https://decentraid-4-4y2v.onrender.com/api/users/register",
         formData
       );
 
