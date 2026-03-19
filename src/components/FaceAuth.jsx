@@ -85,7 +85,7 @@ export default function FaceAuth() {
     });
 
     alert("Face Registered Successfully");
-    navigate('EmailOTP')
+    window.location.href = "https://decentra-id-beige.vercel.app/EmailOTP";
 
   };
 
