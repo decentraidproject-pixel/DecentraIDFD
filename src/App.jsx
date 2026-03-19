@@ -38,12 +38,12 @@ function App(){
   <Route path="/" element={<Layout />}>
 
     <Route index element={<HomeScreen />} />
-    <Route path="EmailOTP" element={<EmailOtp />} />
+    
     <Route path="about" element={<About />} />
     <Route path="contact" element={<Contact />} />
     <Route path="help" element={<Help />} />
     <Route path="startNow" element={<StartNow />} />
-    <Route path="FaceAuth" element={<FaceAuth />} />
+  
     <Route path="payment" element={<Payment />} />
     <Route path="reginfo" element={<RegInfo />} />
 
@@ -56,6 +56,10 @@ function App(){
     <Route path="userEmailOTPVerification" element={<UseremailOTP />} />
 
 
+     <Route path="FaceAuth" element={<FaceAuth />} >
+<Route path="EmailOTP" element={<EmailOtp />} />
+ </Route>
+    
 
      <Route path="user-Portal" element={<UserPortal/>}>
       <Route path="user-Login" element={<UserLogin/>} />
