@@ -84,7 +84,7 @@ export default function FaceAuth() {
     });
 
     alert("Face Registered Successfully");
-    navigate('EmailOtp')
+    navigate('EmailOTP')
 
   };
 
