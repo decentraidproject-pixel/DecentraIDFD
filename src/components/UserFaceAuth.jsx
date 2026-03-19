@@ -30,7 +30,7 @@ export default function FaceAuth() {
     loadModels();
   }, []);
 
-  // Start camera
+  
   const startVideo = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
