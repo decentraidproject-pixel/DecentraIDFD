@@ -26,6 +26,7 @@ import UserDashboard from './pages/UserDashboard';
 import VerifierDashboard from './pages/VerifierDashboard';
 import UserLookup from './pages/UserLookup';
 
+
 import UserPayment from './components/UserPayment';
 
 function App(){
@@ -74,7 +75,7 @@ function App(){
 
 <Route path="UserLookup" element={<UserLookup/>}/>
 
-<Route path="UserFaceAuth" element={<UserFaceAuth/>}/>
+
 <Route path="UseremailOTP" element={<UseremailOTP/>}/>
 <Route path="UserPayment" element={<UserPayment/>}/>
   </Route>

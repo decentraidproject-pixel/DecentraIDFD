@@ -46,14 +46,14 @@ const features = [
 ];
 
 function verifierReg(){
- navigate('UserFaceAuth')
+ navigate('FaceAuth')
 }
 
 function admin(){
  navigate('admin-login')
 }
 function user(){
- navigate('userfaceAuth')
+ navigate('UserfaceAuth')
 }
 
   function started(){
