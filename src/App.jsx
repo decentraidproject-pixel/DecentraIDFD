@@ -25,8 +25,7 @@ import UserRegister from './pages/UserRegister';
 import UserDashboard from './pages/UserDashboard';
 import VerifierDashboard from './pages/VerifierDashboard';
 import UserLookup from './pages/UserLookup';
-import UserFaceAuth from './components/UserFaceAuth';
-import UseremailOTP from './components/UseremailOTP';
+
 import UserPayment from './components/UserPayment';
 
 function App(){
