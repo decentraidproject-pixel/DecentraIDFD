@@ -56,9 +56,9 @@ function App(){
     <Route path="userEmailOTPVerification" element={<UseremailOTP />} />
 
 
-     <Route path="FaceAuth" element={<FaceAuth />}/ >
+     <Route path="FaceAuth" element={<FaceAuth />} >
 <Route path="EmailOTP" element={<EmailOtp />} />
-
+</Route>
     
 
      <Route path="user-Portal" element={<UserPortal/>}>
