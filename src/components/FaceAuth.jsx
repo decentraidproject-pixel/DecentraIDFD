@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import * as faceapi from "face-api.js";
 import {useNavigate} from 'react-router-dom'
 export default function FaceAuth() {
-  const API = "https://fbackend-3.onrender.com/";
+  const API = "https://fbackend-3.onrender.com";
 
   const videoRef = useRef(null);
   const [name, setName] = useState("");
