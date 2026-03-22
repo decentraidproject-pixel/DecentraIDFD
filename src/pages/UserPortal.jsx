@@ -7,9 +7,9 @@ function UserPortal() {
     function login(){
        navigate('user-Login')
     }
-    function register(){
-        navigate('FaceAuth')
-    }
+   function register() {
+  window.location.href = "https://decentra-id-blush.vercel.app/userfaceAuth";
+}
   return (
 
     <div>
