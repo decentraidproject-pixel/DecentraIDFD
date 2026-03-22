@@ -6,7 +6,7 @@ const PaymentStart = () => {
   const handleClick = () => {
     
     window.open(
-      "https://buy.stripe.com/test_6oU9AL51f4vh7WC7jG83C00",
+      "https://buy.stripe.com/test_3cI7sDalzf9Vfp49rO83C01",
       "_parent"
     );
   };
