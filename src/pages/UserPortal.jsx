@@ -8,7 +8,7 @@ function UserPortal() {
        navigate('user-Login')
     }
    function register() {
-  window.location.href = "https://decentra-id-blush.vercel.app/register";
+  window.location.href = "https://decentra-idfd.vercel.app/verifier-Portal/register";
 }
   return (
 
