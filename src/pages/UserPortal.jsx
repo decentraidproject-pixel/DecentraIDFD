@@ -8,7 +8,7 @@ function UserPortal() {
        navigate('user-Login')
     }
    function register() {
-  window.location.href = "https://decentra-idfd.vercel.app/verifier-Portal/register";
+  window.location.href = "https://decentra-idfd.vercel.app/user-Portal/userRegister";
 }
   return (
 
