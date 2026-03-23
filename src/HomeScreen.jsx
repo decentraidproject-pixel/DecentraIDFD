@@ -56,6 +56,10 @@ function user(){
  navigate('UserfaceAuth')
 }
 
+  function verify(){
+  navigate('UserLookup')
+}
+
   function started(){
     const c=circleRef.current;
     const text=textRef.current;
@@ -96,7 +100,7 @@ function user(){
 <p className='title' >TrustLedger — Secure Digital Identity & Reputation Verification Platform</p>
 <p className='description'>TrustLedger provides a secure digital identity system using biometric verification and blockchain technology.
 Users register with their identity and face authentication, creating a tamper-proof identity record.
-The platform assigns a dynamic reputation score that helps applications verify whether a user is genuine before granting access.</p>
+The platform assigns a dynamic reputation score that helps applications verify whether a user is genuine before granting access.</p>   <button style={{marginLeft:"500px",marginTop:"20px",color:"white",font:"30px"}} onClick={verify}>Click and Verify </button>
 <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
   <p className="titleimg">📸</p>
   <p className="titleimg">⏱️</p>
