@@ -9,9 +9,7 @@ const Header = () => {
 
   const n=useNavigate();
 
-  function verify(){
-    n('UserLookup');
-  }
+ 
 
   const [open,setOpen]=useState();
   return (
@@ -33,7 +31,7 @@ const Header = () => {
           <Link to="/about">About</Link>
           <Link to="/contact" >Contact</Link>
           <Link to="/help">Help</Link>
-          <Link to="startnow" onClick={verify}>Verify🛡️</Link>
+          <Link to="UserLookup" >Verify🛡️</Link>
          </nav>
          </div>
       </div>
