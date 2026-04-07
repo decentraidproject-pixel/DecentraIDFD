@@ -1,8 +1,8 @@
 import React,{useEffect,useRef} from 'react'
 import './Header.css'
-import user from './assets/user.png'
+import users from './assets/user.png'
 import verifier from './assets/verifier.png';
-import admin from './assets/admin.png'
+import adminpic from './assets/admin.png'
 import { useNavigate } from 'react-router-dom';
 import { FaUserCheck, FaEnvelope, FaStar, FaShieldAlt, FaLock, FaChartLine } from "react-icons/fa";
 
@@ -56,7 +56,7 @@ function user(){
  navigate('UserfaceAuth')
 }
 
-  function verify(){
+function verify(){
   navigate('UserLookup')
 }
 
@@ -95,36 +95,66 @@ function user(){
 
   return (
     <>
-<div className='homeContent' style={{backgroundColor:"black"}}>  
-<div className='left'>
-<p className='title' >TrustLedger — Secure Digital Identity & Reputation Verification Platform</p>
-<p className='description'>TrustLedger provides a secure digital identity system using biometric verification and blockchain technology.
-Users register with their identity and face authentication, creating a tamper-proof identity record.
-The platform assigns a dynamic reputation score that helps applications verify whether a user is genuine before granting access.</p>   <button style={{marginLeft:"500px",marginTop:"20px",color:"white",font:"30px"}} onClick={verify}>Click and Verify </button>
-<div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-  <p className="titleimg">📸</p>
-  <p className="titleimg">⏱️</p>
-</div>
-</div>
-<div className='right' >
-  <div>
-     <svg width={200} height={170}>
-      <circle 
-      
-         className='progress-ring-bg'
-         cx={100} cy={80} r={70}
-      />
-      <circle className='progress-ring-circle'
-      ref={circleRef}
-      cx={100} cy={80} r={70}/>
-     </svg>
-     <div className='percentage' ref={textRef}>0%</div>
-     
+
+<div className="homeContent" style={{backgroundColor:"#005b69", borderRadius:"30px"}}>
+
+  <div className="left"  style={{backgroundColor:"black", borderRadius:"30px",marginLeft:"2px"}}>
+    
+    <h1 className="title">
+      TrustLedger — Secure Digital Identity & Reputation Platform
+    </h1>
+
+    <p className="description">
+      TrustLedger provides a secure digital identity system using biometric verification 
+      and blockchain technology. Users register with identity and face authentication, 
+      creating a tamper-proof identity record. The platform assigns a dynamic reputation 
+      score to verify genuine users before granting access.
+    </p>
+
+    <button className="verify-btn" onClick={verify}>
+      Click & Verify
+    </button>
+
+    <div className="icons">
+      <span>📸 Face Auth</span>
+      <span>⏱️ Fast Verification</span>
+    </div>
+
   </div>
 
 </div>
 
-</div> 
+
+<div className="right">
+  <div className="progress-container">
+    
+    <svg viewBox="0 0 200 200" className="progress-svg">
+      
+      <circle
+        className="progress-ring-bg"
+        cx="100"
+        cy="100"
+        r="80"
+      />
+
+      <circle
+        className="progress-ring-circle"
+        ref={circleRef}
+        cx="100"
+        cy="100"
+        r="80"
+      />
+
+    </svg>
+
+    <div className="percentage" ref={textRef}>0%</div>
+
+  </div>
+</div>
+
+
+
+
 
 
  <section className="features-section">
@@ -140,53 +170,59 @@ The platform assigns a dynamic reputation score that helps applications verify w
       </div>
     </section>
     
+<div className="card">
 
-    <div className='card'>
-       <div className='item'>
-        <div className='left'>
-        <p className='name'>
-          User
-        </p>
-          <img src={user} alt='user'  className='img' style={{width: "200px",height:"210px"}}/>
-          </div>
-           <div className='right'>
-          <p style={{width: "200px", color:'white'}}>Build your digital identity. Earn trusted verification. Strengthen your reputation.</p>
-          <button className='btn' onClick={user}>Get Started</button>
-       </div>
-       
-       </div>
-
-        
-
-       <div className='item1'>
-        <div className='left'>
-        <p className='name'>
-          Verifier
-        </p>
-          <img src={verifier} alt='user' style={{width: "200px"}} className='img1'/>
-        </div>  
-           <div className='right'>
-          <p style={{width: "200px", color:'white'}}>Verify identities. Issue trust approvals. Strengthen the reputation network.</p>
-          <button className='btn2' onClick={verifierReg}>Get Started</button>
-       </div>
-       </div>
-
-       <div className='item2'>
-        <div className='left'>
-        <p className='name'>
-          Admin
-        </p>
-          <img src={admin} alt='user' style={{width: "170px", marginLeft:"25px"}}/>
-          </div>
-           <div className='right'>
-          <p style={{width: "200px", color:'white',marginLeft:'30px'}}>Control access. Verify organizations. Safeguard network integrity.</p>
-          <button className='btn3' onClick={admin} >Get Started</button>
-       </div>
-       </div>
-
-      
+  {/* USER */}
+  <div className="card-item card-user">
+    <div className="icon-box">
+      <img src={users} alt="user" />
+      <p className="name">User</p>
     </div>
- 
+
+    <div className="content">
+      <p>
+        Build your digital identity. Earn trusted verification. 
+        Strengthen your reputation.
+      </p>
+      <button className="btn" onClick={user}>Get Started</button>
+    </div>
+  </div>
+
+  {/* VERIFIER */}
+  <div className="card-item card-verifier">
+    <div className="icon-box">
+      <img src={verifier} alt="verifier" />
+      <p className="name">Verifier</p>
+    </div>
+
+    <div className="content">
+      <p>
+        Verify identities. Issue trust approvals. 
+        Strengthen the reputation network.
+      </p>
+      <button className="btn" onClick={verifierReg}>Get Started</button>
+    </div>
+  </div>
+
+  {/* ADMIN */}
+  <div className="card-item card-admin">
+    <div className="icon-box">
+      <img src={adminpic} alt="admin" />
+      <p className="name">Admin</p>
+    </div>
+
+    <div className="content">
+      <p>
+        Control access. Verify organizations. 
+        Safeguard network integrity.
+      </p>
+      <button className="btn" onClick={admin}>Get Started</button>
+    </div>
+  </div>
+
+</div>
+   
+
     </>
   )
 }
