@@ -10,7 +10,7 @@ const Header = () => {
   const n=useNavigate();
 
   function verify(){
-    n(UserLookup);
+    n('UserLookup');
   }
 
   const [open,setOpen]=useState();
