@@ -53,7 +53,7 @@ function App(){
     <Route path="admin-login" element={<AdminLogin />} />
     
     <Route path="userfaceAuth" element={<UserFaceAuth />} />
-    <Route path="userEmailOTPVerification" element={<UseremailOTP />} />
+    <Route path="User-EmailOTP-Verification" element={<UseremailOTP />} />
 
 
      <Route path="FaceAuth" element={<FaceAuth />}/ >
@@ -80,7 +80,7 @@ function App(){
 <Route path="UserLookup" element={<UserLookup/>}/>
 
 
-<Route path="UseremailOTP" element={<UseremailOTP/>}/>
+
 <Route path="UserPayment" element={<UserPayment/>}/>
   </Route>
 </Routes>
