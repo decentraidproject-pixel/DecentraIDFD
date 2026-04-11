@@ -38,7 +38,7 @@ function App(){
   <Route path="/" element={<Layout />}>
 
     <Route index element={<HomeScreen />} />
-    
+        <Route path="User-EmailOTP-Verification" element={<UseremailOTP />} />
     <Route path="about" element={<About />} />
     <Route path="contact" element={<Contact />} />
     <Route path="help" element={<Help />} />
@@ -53,7 +53,7 @@ function App(){
     <Route path="admin-login" element={<AdminLogin />} />
     
     <Route path="userfaceAuth" element={<UserFaceAuth />} />
-    <Route path="User-EmailOTP-Verification" element={<UseremailOTP />} />
+
 
 
      <Route path="FaceAuth" element={<FaceAuth />}/ >
